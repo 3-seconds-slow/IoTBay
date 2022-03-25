@@ -1,0 +1,17 @@
+.Nav-bar{
+    width: 100%;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    background: rgb(60,58,58);
+}
+li a{
+    display: block;
+    color:white;
+    text-decoration: none;
+    padding:14px 16px;
+}
