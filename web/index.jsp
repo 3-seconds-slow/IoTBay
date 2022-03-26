@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : Mar 24, 2022, 11:47:02 PM
+    Author     : johnwang
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
