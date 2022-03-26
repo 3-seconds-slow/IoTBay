@@ -20,8 +20,16 @@
             <div class="Login">
                 <form action="Welcome.jsp" method="post">
                     <div class="Login-Form">
-                        <input class="UN" name="UserName" type="text" placeholder="Enter your username here" required="true">
-                        <input class="PW" name="PassWord" type="password" placeholder="Enter your password here" required="true">
+                        <table>
+                            <tr>
+                                <td>Username:</td>
+                                <td><input class="UN" name="UserName" type="text" placeholder="Enter your username here" required="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Password</td>
+                                <td><input class="PW" name="PassWord" type="password" placeholder="Enter your password here" required="true"></td>
+                            </tr>
+                        </table>
                     </div>
                     <div class="Button">
                         <input class="Button-Login" type="submit" value="Login" >
