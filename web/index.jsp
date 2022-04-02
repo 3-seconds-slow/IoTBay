@@ -20,7 +20,7 @@
             </ul>
         </div>
         <div class="Content">
-            <h1>Hi User! How are you today?</h1>
+            <h1>Hi User! Welcome to the IoTBay! How are you today?</h1>
             <button><a href="Login.jsp">Login</a></button>
             <button><a href="Register.jsp">Register</a></button>
         </div>

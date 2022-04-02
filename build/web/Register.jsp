@@ -29,23 +29,43 @@
                         <table>
                             <tr>
                                 <td>Username:</td>
-                                <td><input name="UserName" type="text" placeholder="Enter your user name here" required="true"></td>
+                                <td><input name="username" type="text" placeholder="Enter your user name here" required="true"></td>
+                            </tr>
+                            <tr>
+                                <td>First name:</td>
+                                <td><input name="firstname" type="text" placeholder="Enter your first name here" required="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Last name:</td>
+                                <td><input name="lastname" type="text" placeholder="Enter your last name here" required="true"></td>
+                            </tr>
+                            <tr>
+                                <td>Birthday:</td>
+                                <td><input name="birthday" type="Date" required="ture"></td>
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input name="Email" type="text" placeholder="Enter your  here" required="ture"></td>
+                                <td><input name="email" type="text" placeholder="Enter your email here" required="ture"></td>
                             </tr>
                             <tr>
                                 <td>Phone number:</td>
-                                <td><input name="Phonenumber" type="text" placeholder="Enter your  here" required="ture"></td>
+                                <td><input name="phonenumber" type="text" placeholder="Enter your phone number here" required="ture"></td>
+                            </tr>
+                            <tr>
+                                <td>Address:</td>
+                                <td><input name="address" type="text" placeholder="Enter your address here" required="ture"></td>
+                            </tr>
+                            <tr>
+                                <td>Gender</td>
+                                <td><input name="gender" type="text" placeholder="Enter your gender here" required="ture"></td>
                             </tr>
                             <tr>
                                 <td>Password:</td>
-                                <td> <input name="Password1" type="password" placeholder="Enter your password here" required="true"></td>
+                                <td> <input name="password1" type="password" placeholder="Enter your password here" required="true"></td>
                             </tr>
                             <tr>
                                 <td>Confirm password:</td>
-                                <td><input name="Password2" type="password" placeholder="Enter your password again here" required="true"></td>
+                                <td><input name="password2" type="password" placeholder="Enter your password again here" required="true"></td>
                             </tr>
                         </table>                    
                     </div>

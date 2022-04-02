@@ -21,18 +21,27 @@
             </ul>
         </div>
         <%
-            String Username = request.getParameter("UserName");
-            String Password1 = request.getParameter("Password1");
-            String Password2 = request.getParameter("Password2");
-            String Email = request.getParameter("Email");
-            String PhoneNumber = request.getParameter("Phonenumber");
-            User user = new User(Username,Email,Password1,Password2,PhoneNumber);
-            session.getAttribute("user");
+            String username = request.getParameter("username");
+            String password1 = request.getParameter("password1");
+            String password2 = request.getParameter("password2");
+            String email = request.getParameter("email");
+            String firstname  = request.getParameter("firstname");
+            String lastname = request.getParameter("lastname");
+            String birthday = request.getParameter("birthday");
+            String address = request.getParameter("address");
+            String gender = request.getParameter("gender");
+            String phonenumber = request.getParameter("phonenumber");
+            
         %>
+         
         <div class="Content">
-            <h1>Welcome user <%= Username%>, How are you today.</h1>
-            <a href="Main.jsp">Main Page</a>
+            <h1>Welcome user <%= username%>, How are you today.</h1>
+            <a href="Main.jsp" ><button>Main Page</button></a>
         </div>
+            <% 
+                User user = new User(username,password1,password2,firstname,lastname,birthday,email,phonenumber,address,gender);
+                session.setAttribute("user", user);
+            %>
         <div class="Footer">
             <p>Copyright 2022 Group 35 All Rights Reserved.</p>
         </div>

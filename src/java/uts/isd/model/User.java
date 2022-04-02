@@ -4,65 +4,119 @@
  */
 package uts.isd.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author johnwang
  */
-public class User {
-    private String Username;
-    private String Password1;
-    private String Password2;
-    private String Email;
-    private String PhoneNumber;
+public class User implements Serializable{
+    //private int userid;
+    private String username;
+    private String password1;
+    private String password2;
+    private String firstname;
+    private String lastname;
+    private String birthday;
+    private String email;
+    private String phonenumber;
+    private String address;
+    private String gender;
 
-    public User(String Username, String Password1, String Password2, String Email, String PhoneNumber) {
-        this.Username = Username;
-        this.Password1 = Password1;
-        this.Password2 = Password2;
-        this.Email = Email;
-        this.PhoneNumber = PhoneNumber;
+    public User(String username, String password1, String password2, String firstname, String lastname, String birthday, String email, String phonenumber, String address, String gender) {
+        this.username = username;
+        this.password1 = password1;
+        this.password2 = password2;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.birthday = birthday;
+        this.email = email;
+        this.phonenumber = phonenumber;
+        this.address = address;
+        this.gender = gender;
     }
 
     public String getUsername() {
-        return Username;
+        return username;
     }
 
-    public void setUsername(String Username) {
-        this.Username = Username;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword1() {
-        return Password1;
+        return password1;
     }
 
-    public void setPassword1(String Password1) {
-        this.Password1 = Password1;
+    public void setPassword1(String password1) {
+        this.password1 = password1;
     }
 
     public String getPassword2() {
-        return Password2;
+        return password2;
     }
 
-    public void setPassword2(String Password2) {
-        this.Password2 = Password2;
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getLastname() {
+        return lastname;
+    }
+
+    public void setLastname(String lastname) {
+        this.lastname = lastname;
+    }
+
+    public String getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(String birthday) {
+        this.birthday = birthday;
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
-    public void setEmail(String Email) {
-        this.Email = Email;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
+    public String getPhonenumber() {
+        return phonenumber;
     }
 
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
+    public void setPhonenumber(String phonenumber) {
+        this.phonenumber = phonenumber;
     }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     
-
+    
 }
 
