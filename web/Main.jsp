@@ -33,10 +33,6 @@
                         <th class="Data"><span>${user.username}</span></th>
                     </tr>
                     <tr>
-                        <th class="Info"><span>Password:</span></th>
-                        <th class="Data"><span>${user.password1}</span></th>
-                    </tr>
-                    <tr>
                         <th class="Info"><span>Email:</span></th>
                         <th class="Data"><span>${user.email}</span></th>
                     </tr>
