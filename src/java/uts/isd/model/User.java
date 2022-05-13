@@ -1,87 +1,44 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package uts.isd.model;
 
 import java.io.Serializable;
 
 /**
  *
- * @author johnwang
+ * @author Changyu Wang
  */
-public class User implements Serializable{
-    //private int userid;
-    private String username;
-    private String password1;
-    private String password2;
-    private String firstname;
-    private String lastname;
-    private String birthday;
+public class User implements Serializable {
+    private String fullname;
     private String email;
     private String phonenumber;
-    private String address;
-    private String gender;
+    private String password;
+    private String stuffornot;
 
-    public User(String username, String password1, String password2, String firstname, String lastname, String birthday, String email, String phonenumber, String address, String gender) {
-        this.username = username;
-        this.password1 = password1;
-        this.password2 = password2;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.birthday = birthday;
+    public User(String fullname, String email, String phonenumber, String password, String stuffornot) {
+        this.fullname = fullname;
         this.email = email;
         this.phonenumber = phonenumber;
-        this.address = address;
-        this.gender = gender;
+        this.password = password;
+        this.stuffornot = stuffornot;
     }
 
-    public String getUsername() {
-        return username;
+    
+    
+
+    public void updateInfo(String fullname, String email, String phonenumber, String password, String stuffornot) {
+        this.fullname = fullname;
+        this.email = email;
+        this.phonenumber = phonenumber; 
+        this.password = password;
+        this.stuffornot = stuffornot;
+    }
+    
+    public String getFullname() {
+        return fullname;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword1() {
-        return password1;
-    }
-
-    public void setPassword1(String password1) {
-        this.password1 = password1;
-    }
-
-    public String getPassword2() {
-        return password2;
-    }
-
-    public void setPassword2(String password2) {
-        this.password2 = password2;
-    }
-
-    public String getFirstname() {
-        return firstname;
-    }
-
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
-    }
-
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
-    }
-
-    public String getBirthday() {
-        return birthday;
-    }
-
-    public void setBirthday(String birthday) {
-        this.birthday = birthday;
+    public void setFullname(String fullname) {
+        this.fullname = fullname;
     }
 
     public String getEmail() {
@@ -100,23 +57,20 @@ public class User implements Serializable{
         this.phonenumber = phonenumber;
     }
 
-    public String getAddress() {
-        return address;
+    public String getPassword() {
+        return password;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public String getGender() {
-        return gender;
+    public String getStuffornot() {
+        return stuffornot;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setStuffornot(String stuffornot) {
+        this.stuffornot = stuffornot;
     }
-
-    
-    
+       
 }
-
