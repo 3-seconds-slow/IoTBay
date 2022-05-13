@@ -14,7 +14,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import uts.isd.model.dao.*;
+import uts.isd.model.dao.UserDAO;
+import uts.isd.model.dao.DBConnector;
 
 /**
  *

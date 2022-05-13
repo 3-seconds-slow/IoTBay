@@ -3,10 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/web/index.html</file>
-            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/controller/ConnectionServlet.java</file>
             <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/model/dao/AccessLogDAO.java</file>
+            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/model/dao/UserDAO.java</file>
+            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/model/AccessLog.java</file>
+            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/model/dao/DB.java</file>
             <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/controller/RegisterClientServlet.java</file>
+            <file>file:/C:/Users/王梓峰/Documents/NetBeansProjects/Ass2/src/java/uts/isd/model/User.java</file>
         </group>
     </open-files>
 </project-private>

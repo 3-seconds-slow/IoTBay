@@ -4,6 +4,7 @@
     Author     : Changyu Wang
 --%>
 
+<%@page import="uts.isd.model.User"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,6 +13,9 @@
         <link rel="stylesheet" href="CSS/Nav.css">
         <link rel="stylesheet" href="CSS/Footer.css">
         <title>HomePage | IoT Bay Project</title>
+        <%
+            User user = (User) session.getAttribute("user");
+        %>
     </head>
     <body>
         <div class="Nav-Bar">
