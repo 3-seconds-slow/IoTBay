@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import uts.isd.model.dao.AccessLogDAO;
 import uts.isd.model.dao.UserDAO;
 import uts.isd.model.dao.DBConnector;
 
@@ -24,7 +25,7 @@ import uts.isd.model.dao.DBConnector;
 public class ConnectionServlet extends HttpServlet {
     private DBConnector DB;
     private UserDAO userDAO;
-    //private AccessLogDAO accessLogDAO;
+    private AccessLogDAO accessLogDAO;
     private Connection connection;
         
     @Override 
@@ -44,13 +45,13 @@ public class ConnectionServlet extends HttpServlet {
         connection = DB.OpenConnection();       
         try {
             userDAO = new UserDAO(connection);
-            //accessLogDAO = new AccessLogDAO(connection);
+            accessLogDAO = new AccessLogDAO(connection);
         } 
         catch (SQLException ex) {
             Logger.getLogger(ConnectionServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         session.setAttribute("userDAO", userDAO);          
-        //session.setAttribute("accessLogDAO", accessLogDAO);
+        session.setAttribute("accessLogDAO", accessLogDAO);
         
     }
     @Override

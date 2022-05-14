@@ -46,13 +46,13 @@ public class LoginStaffServlet extends HttpServlet {
             if (user.getPassword().equals(password)) {
                 if("stuff".equals(user.getStuffornot())){
                     session.setAttribute("user", user);
-                    //try {
-                        //accessLogDAO.addLog(user.getEmail(), "User Logged In");
-                   // } 
-                    //catch (SQLException ex) {
-                    //    Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
-                   // }
-                    request.getRequestDispatcher("index.jsp").include(request, response);
+                    try {
+                        accessLogDAO.addLog(user.getEmail(), "User Logged In");
+                    } 
+                    catch (SQLException ex) {
+                        Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    request.getRequestDispatcher("LoginWelcome.jsp").include(request, response);
                 }
                 else{
                     session.setAttribute("loginErr", "Error: You are not Client Please go to the Staff login page");

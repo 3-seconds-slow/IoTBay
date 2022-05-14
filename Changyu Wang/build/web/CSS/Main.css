@@ -14,19 +14,3 @@ body{
     width:70%;
     margin: 0 auto;
 }
-th{
-    border: solid 1px black;
-}
-.Info{
-    width: 150px;
-}
-span{
-    float:left;
-}
-.Data{
-    width: 350px;
-}
-.User-Profile{
-    width: 510px;
-    margin: 0 auto;
-}

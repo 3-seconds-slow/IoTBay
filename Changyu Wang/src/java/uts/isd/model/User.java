@@ -22,9 +22,6 @@ public class User implements Serializable {
         this.stuffornot = stuffornot;
     }
 
-    
-    
-
     public void updateInfo(String fullname, String email, String phonenumber, String password, String stuffornot) {
         this.fullname = fullname;
         this.email = email;

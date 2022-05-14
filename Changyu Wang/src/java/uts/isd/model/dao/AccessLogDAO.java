@@ -31,7 +31,7 @@ public class AccessLogDAO {
     
     
     public void addLog(String email, String logEvent) throws SQLException {
-        String SQL = "INSERT INTO Group35.AccessLogTable(email, eventtime, logevent) VALUES (?, ?, ?)";
+        String SQL = "INSERT INTO Group35.ACCESSLOG_TABLE(EMAIL, TIME, EVENT) VALUES (?, ?, ?)";
         Date EventDate = new Date();
         Timestamp EventTime = new Timestamp(EventDate.getTime());
         PreparedStatement PS = connection.prepareStatement(SQL);
@@ -45,7 +45,7 @@ public class AccessLogDAO {
     
     public ArrayList<AccessLog> UserAllLogs(String email) throws SQLException {
         ArrayList<AccessLog> UserLog = new ArrayList<AccessLog>();
-        String query = "SELECT * FROM Group35.AccessLogTable WHERE email = ?";
+        String query = "SELECT * FROM Group35.ACCESSLOG_TABLE WHERE email = ?";
         PreparedStatement PS = connection.prepareStatement(query);
         PS.setString(1, email);
         ResultSet result = PS.executeQuery();
@@ -60,7 +60,7 @@ public class AccessLogDAO {
     
     public ArrayList<AccessLog> findUserLogDate(String email,Timestamp begin, Timestamp end) throws SQLException {
         ArrayList<AccessLog> UserLog = new ArrayList<AccessLog>();
-        String query = "SELECT * FROM Group35.AccessLogTable WHERE email = ? AND  LogEventTime>= ? AND LogEventTime <= ?";
+        String query = "SELECT * FROM Group35.ACCESSLOG_TABLE WHERE email = ? AND  TIME>= ? AND TIME <= ?";
         PreparedStatement PS = connection.prepareStatement(query);
         PS.setString(1, email);
         PS.setTimestamp(2, begin);

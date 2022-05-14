@@ -14,8 +14,13 @@
     <body>        
         <div class="container">
             <h1 class="text-center">Success!</h1>
-            <p class="text-center">Your account has been created</p >
-            <p class="text-center">Head back to the home page and log into your account!</p >          
+            <p class="text-center">The account is created in our database</p >
+            <p class="text-center">The site will jump in 5 seconds in to login page for client</p >
+            <script>
+                setTimeout(function(){
+                   window.location.href = 'LoginStaff.jsp';
+                }, 5000);
+            </script>        
         </div>
     </body>
 </html>

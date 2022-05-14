@@ -4,6 +4,8 @@
     Author     : johnwang
 --%>
 
+<%@page import="uts.isd.model.User"%>
+<%@page import="uts.isd.model.dao.*"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,6 +23,9 @@
             </ul>
         </div>
         <% 
+            User user = (User) session.getAttribute("user");
+            AccessLogDAO accessLogDAO = (AccessLogDAO) session.getAttribute("accessLogDAO");
+            accessLogDAO.addLog(user.getEmail(), "User Logged Out");
             session.invalidate();
         %>
         <div class="Content">

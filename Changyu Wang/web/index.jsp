@@ -15,6 +15,8 @@
         <title>HomePage | IoT Bay Project</title>
         <%
             User user = (User) session.getAttribute("user");
+            String typeErr = (String) session.getAttribute("typeErr");
+            String existErr = (String) session.getAttribute("existErr");
         %>
     </head>
     <body>
@@ -33,5 +35,6 @@
         <div class="Footer">
             <p>Copyright 2022 Group 35 All Rights Reserved.</p>
         </div>
+        <jsp:include page="/ConnectionServlet" flush="true"/>
     </body>
 </html>

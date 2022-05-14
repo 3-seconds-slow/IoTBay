@@ -52,7 +52,7 @@ public class LoginClientServlet extends HttpServlet {
                     catch (SQLException ex) {
                         Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
                     }
-                    request.getRequestDispatcher("index.jsp").include(request, response);
+                    request.getRequestDispatcher("LoginWelcome.jsp").include(request, response);
                 }
                 else{
                     session.setAttribute("loginErr", "Error: You are not Client Please go to the Staff login page");

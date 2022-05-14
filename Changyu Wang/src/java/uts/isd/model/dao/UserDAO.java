@@ -11,6 +11,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import uts.isd.model.User;
 
 /**
@@ -40,12 +42,12 @@ public class UserDAO {
         } 
         catch (SQLException ex) {
             System.out.println(ex);
-            //Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     public User findUser(String EMAIL) throws SQLException {
-        String SQL = "SELECT * FROM GROUP35.USER_TABLE WHERE email=?";
+        String SQL = "SELECT * FROM GROUP35.USER_TABLE WHERE EMAIL=?";
         PreparedStatement PS = connection.prepareStatement(SQL);
         PS.setString(1, EMAIL);
         ResultSet Result = PS.executeQuery();
@@ -61,15 +63,14 @@ public class UserDAO {
         Result.close();
         return null;
     }
-    /*
-  
+    
     public void updateUser(String email, String fullname, String password, String phonenumber,String Stuffornot) throws SQLException {        
-        String query = "UPDATE GROUP35.USER_TABLE SET UserEmail=?, UserName=?, Password=?, PhoneNumber=?, isStaff=? WHERE UserId = ?";
+        String query = "UPDATE GROUP35.USER_TABLE(FULLNAME, EMAIL, PHONENUMBER, PASSWORD, STAFFORCUSTOMER) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement PS = connection.prepareStatement(query);
-        PS.setString(1, email);
-        PS.setString(2, fullname);
-        PS.setString(3, password);
-        PS.setString(4, phonenumber);
+        PS.setString(1, fullname);
+        PS.setString(2, email);
+        PS.setString(3, phonenumber);
+        PS.setString(4, password);
         PS.setString(5, Stuffornot);
         PS.executeUpdate();
         PS.close();
@@ -77,39 +78,10 @@ public class UserDAO {
     
 
     public void deleteUser(String email) throws SQLException {
-        String SQL = "DELETE FROM GROUP35.USER_TABLE WHERE email=?";
+        String SQL = "DELETE FROM GROUP35.USER_TABLE WHERE EMAIL=?";
         PreparedStatement PS = connection.prepareStatement(SQL);
         PS.setString(1, email);
         PS.executeUpdate();
         PS.close();
     }
-    
-
-    public boolean checkUser(String userEmail) throws SQLException {
-        String query = "SELECT * FROM Elijah.USER_T WHERE USEREMAIL=?";
-        PreparedStatement PS = connection.prepareStatement(query);
-        PS.setString(1, userEmail);
-        ResultSet result = PS.executeQuery();
-        while(result.next()) {
-            String email = result.getString(1);           
-            if (userEmail.equals(email)) {
-                PS.close();
-                return true;
-            }
-        }        
-        return false;
-    }
-    
-
-    public ArrayList<User> ShowUser() throws SQLException{
-        String query = "SELECT * FROM Elijah.USER_T ORDER BY UserID";
-        ArrayList<User> UserList = new ArrayList<User>();
-        PreparedStatement pstmt = connection.prepareStatement(query);
-        ResultSet rs = pstmt.executeQuery();
-        while(rs.next()) {
-           // User user = new User(rs.getString("UserID"), rs.getString("UserEmail"), rs.getString("UserName"), rs.getString("Password"), rs.getString("PhoneNumber"), rs.getBoolean("isStaff"));
-            //UserList.add(user);
-        } 
-        return UserList;
-    }*/
 }
