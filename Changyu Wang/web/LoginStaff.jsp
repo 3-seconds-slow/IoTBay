@@ -32,8 +32,8 @@
                     <div class="Login-Form">
                         <table>
                             <tr>
-                                <td>Username:</td>
-                                <td><input class="UN" name="username" type="text" placeholder="Enter your username here" required="true"></td>
+                                <td>Username(Email):</td>
+                                <td><input class="UN" name="username" type="text" placeholder="Enter your email here NO CAPS!" required="true"></td>
                             </tr>
                             <tr>
                                 <td>Password</td>

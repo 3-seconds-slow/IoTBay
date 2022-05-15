@@ -37,7 +37,7 @@
                             </tr>
                             <tr>
                                 <td>Email:</td>
-                                <td><input name="email" type="text" placeholder="Enter your email here" required="ture"></td>
+                                <td><input name="email" type="text" placeholder="Enter your email here NO CAPS!" required="ture"></td>
                             </tr>
                             <tr>
                                 <td>Phone number:</td>

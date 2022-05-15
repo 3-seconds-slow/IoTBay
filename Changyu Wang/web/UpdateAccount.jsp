@@ -36,7 +36,7 @@
                     </tr>
                     <tr>
                         <td>Fullname:</td>
-                        <td><input name="fullname" type="text" placeholder="Enter your new fullname without space here" required="ture" style="width: 400px;"></td>
+                        <td><input name="fullname" type="text" placeholder="Enter your new fullname without space here NO CAPS!" required="ture" style="width: 400px;"></td>
                     </tr>
                     <tr>
                         <td>Password:</td>
