@@ -13,10 +13,10 @@ import javax.servlet.http.HttpSession;
     public class Validator implements Serializable{ 
 
     
-    private String EmailValidator = "([a-zA-Z0-9]+)(([._-])([a-zA-Z0-9]+))*(@)([a-z]+)(.)([a-z]{3})((([.])[a-z]{0,2})*)";      
-    private String FullNameValidator = "([A-Z][a-z]+[\\s])+[A-Z][a-z]*";       
-    private String PasswordValidator = "[a-z0-9]{4,}";         
-    private String DateValidator = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$"; 
+    private final String EmailValidator = "([a-zA-Z0-9]+)(([._-])([a-zA-Z0-9]+))*(@)([a-z]+)(.)([a-z]{3})((([.])[a-z]{0,2})*)";      
+    private final String FullNameValidator = "([A-Z][a-z]+[\\s])+[A-Z][a-z]*";       
+    private final String PasswordValidator = "[a-z0-9]{4,}";         
+    private final String DateValidator = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$"; 
     
     public Validator(){ 
         

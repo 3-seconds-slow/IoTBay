@@ -31,6 +31,7 @@
             <button><a href="LoginStaff.jsp">Login as Staff</a></button>
             <button><a href="RegisterClient.jsp">Register as Client</a></button>
             <button><a href="RegisterStaff.jsp">Register as Staff</a></button>
+            <button><a href="Admin-YK/index.html">AdminStuffControl(Yunkai)</a></button>
         </div>
         <div class="Footer">
             <p>Copyright 2022 Group 35 All Rights Reserved.</p>
