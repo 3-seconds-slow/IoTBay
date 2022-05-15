@@ -35,38 +35,46 @@ public class LoginStaffServlet extends HttpServlet {
         String password = request.getParameter("password1").trim();
         UserDAO userDAO = (UserDAO) session.getAttribute("userDAO");
         AccessLogDAO accessLogDAO = (AccessLogDAO) session.getAttribute("accessLogDAO");
+        Validator validator = new Validator();
+        Validator.clear(session);
         User user = null;    
-        try {         
-            user = userDAO.findUser(email);
-        } 
-        catch (SQLException ex) {           
-            Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);       
-        }
-        if (user != null) {
-            if (user.getPassword().equals(password)) {
-                if("stuff".equals(user.getStuffornot())){
-                    session.setAttribute("user", user);
-                    try {
-                        accessLogDAO.addLog(user.getEmail(), "User Logged In");
-                    } 
-                    catch (SQLException ex) {
-                        Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    request.getRequestDispatcher("LoginWelcome.jsp").include(request, response);
-                }
-                else{
-                    session.setAttribute("loginErr", "Error: You are not Client Please go to the Staff login page");
-                    request.getRequestDispatcher("LoginStaff.jsp").include(request, response);
-                }
+        if(!validator.ValidatorEmail(email)){   
+            try {         
+                user = userDAO.findUser(email);
+            } 
+            catch (SQLException ex) {           
+                Logger.getLogger(LoginStaffServlet.class.getName()).log(Level.SEVERE, null, ex);       
             }
-            else {
-                session.setAttribute("loginErr", "Error: The user cannot be found in the database, please check your login details again");
+            if (user != null) {
+                if (user.getPassword().equals(password)) {
+                    if("staff".equals(user.getStuffornot())){
+                        session.setAttribute("user", user);
+                        try {
+                            accessLogDAO.addLog(user.getEmail(), "User Logged In");
+                        } 
+                        catch (SQLException ex) {
+                            Logger.getLogger(LoginStaffServlet.class.getName()).log(Level.SEVERE, null, ex);
+                        }
+                        request.getRequestDispatcher("LoginWelcome.jsp").include(request, response);
+                    }
+                    else{
+                        session.setAttribute("ERRMSG", "Error: You are not Staff Please go to the Client login page");
+                        request.getRequestDispatcher("LoginStaff.jsp").include(request, response);
+                    }
+                }
+                else {
+                    session.setAttribute("ERRMSG", "Error: Password Wrong");
+                    request.getRequestDispatcher("LoginStaff.jsp").include(request, response);
+                }                        
+            } 
+            else {                       
+                session.setAttribute("ERRMSG", "Error: The user does not exist in the database");
                 request.getRequestDispatcher("LoginStaff.jsp").include(request, response);
-            }                        
-        } 
-        else {                       
-            session.setAttribute("existErr", "Error: The user does not exist in the database");
-            request.getRequestDispatcher("LoginStaff.jsp").include(request, response);
-        }   
+            } 
+        }
+        else{
+            session.setAttribute("ERRMSG", "Error: Check your email format");
+            request.getRequestDispatcher("LoginStaff.jsp").include(request, response); 
+        }  
     }
 }

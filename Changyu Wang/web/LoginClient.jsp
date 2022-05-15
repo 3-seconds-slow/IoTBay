@@ -17,8 +17,12 @@
         <div class="Nav-Bar">
             <ul>
                 <li class="target"><a href="index.jsp">Home</a></li>
+                <li class="right" style="float: right"><a onclick="history.back()">Go Back</a></li>
             </ul>
         </div>
+        <%
+            String ERRMSG = (String) session.getAttribute("ERRMSG");
+        %>
         <div class="Content">
             <div class="Login-Welcome-Title">
                 <h1>Login as Client to IoTBay</h1>
@@ -36,6 +40,7 @@
                                 <td><input class="PW" name="password1" type="password" placeholder="Enter your password here" required="true"></td>
                             </tr>
                         </table>
+                        <small class="message"><%=(ERRMSG != null ? ERRMSG : "")%></small>
                     </div>
                     <div class="Button">
                         <input class="Button-Login" type="submit" value="Login" >

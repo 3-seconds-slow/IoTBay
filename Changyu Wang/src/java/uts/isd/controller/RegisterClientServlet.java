@@ -32,7 +32,9 @@ public class RegisterClientServlet extends HttpServlet {
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {        
-        HttpSession session = request.getSession();      
+        HttpSession session = request.getSession();
+        Validator validator = new Validator();
+        Validator.clear(session);
         String name = request.getParameter("fullname").trim();
         String email = request.getParameter("email").trim();
         String phonenumber = request.getParameter("phonenumber").trim(); 
@@ -41,32 +43,44 @@ public class RegisterClientServlet extends HttpServlet {
         String Stufforclient = "client";
         UserDAO userDAO = (UserDAO) session.getAttribute("userDAO");
         User user = null;
-        if(password1 == null ? password1 == null : password1.equals(password1)){
-            try {
-                user = userDAO.findUser(email);
-                System.out.println(user==null);
-                if (user == null) {
-                    try{
-                        userDAO.addUser(name, email, phonenumber,password1,Stufforclient);
-                        request.getRequestDispatcher("RegisterClientOK.jsp").include(request, response);                
+        if(!validator.ValidatorFullName(name)){
+            if(!validator.ValidatorEmail(email)){
+                if(password2.equals(password1)){
+                    try {
+                        user = userDAO.findUser(email);
+                        System.out.println(user==null);
+                        if (user == null) {
+                            try{
+                                userDAO.addUser(name, email, phonenumber,password1,Stufforclient);
+                                request.getRequestDispatcher("RegisterClientOK.jsp").include(request, response);                
+                            } 
+                            catch (SQLException ex) {
+                                session.setAttribute("ERRMSG", "Error: Can not add to database");
+                                request.getRequestDispatcher("RegisterClient.jsp").include(request, response);
+                            }  
+                        } 
+                        else {
+                            session.setAttribute("ERRMSG", "Error: This email already exists in the online system, try another one!");
+                            request.getRequestDispatcher("RegisterClient.jsp").include(request, response);  
+                        } 
                     } 
                     catch (SQLException ex) {
-                        session.setAttribute("addErr", "Error: Can not added to the database");
-                        request.getRequestDispatcher("RegisterClient.jsp").include(request, response);
-                    }  
-                } 
-                else {
-                    session.setAttribute("existErr", "Error: This email already exists in the online system, try another one!");
-                    request.getRequestDispatcher("RegisterClient.jsp").include(request, response);  
-                } 
-            } 
-            catch (SQLException ex) {
-                Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
-            }        
+                        Logger.getLogger(LoginClientServlet.class.getName()).log(Level.SEVERE, null, ex);
+                    }        
+                }
+                else{
+                    session.setAttribute("ERRMSG", "Error:The passwords are not match");
+                    request.getRequestDispatcher("RegisterClient.jsp").include(request, response); 
+                }
+            }
+            else{
+                session.setAttribute("ERRMSG", "Error:Email format is wrong");
+                request.getRequestDispatcher("RegisterClient.jsp").include(request, response); 
+            }
         }
         else{
-            session.setAttribute("addErr", "Error:The passwords are not match");
-            request.getRequestDispatcher("RegisterClient.jsp").include(request, response); 
+            session.setAttribute("ERRMSG", "Error:name format is wrong only can be letters");
+            request.getRequestDispatcher("RegisterClient.jsp").include(request, response);
         }
     }
 }

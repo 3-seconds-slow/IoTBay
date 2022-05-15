@@ -64,19 +64,16 @@ public class UserDAO {
         return null;
     }
     
-    public void updateUser(String email, String fullname, String password, String phonenumber,String Stuffornot) throws SQLException {        
-        String query = "UPDATE GROUP35.USER_TABLE(FULLNAME, EMAIL, PHONENUMBER, PASSWORD, STAFFORCUSTOMER) VALUES (?, ?, ?, ?, ?)";
-        PreparedStatement PS = connection.prepareStatement(query);
-        PS.setString(1, fullname);
-        PS.setString(2, email);
-        PS.setString(3, phonenumber);
-        PS.setString(4, password);
-        PS.setString(5, Stuffornot);
+    public void updateUser(String phonenumber, String fullname, String password, String email) throws SQLException {
+        String SQL = "UPDATE Group35.USER_TABLE SET FULLNAME='"+fullname+"',PHONENUMBER ='"+phonenumber+"',PASSWORD='"+password+"'WHERE EMAIL='"+email+"'";
+        PreparedStatement PS = connection.prepareStatement(SQL);
+        System.out.println(SQL);
         PS.executeUpdate();
         PS.close();
+        
+        
     }
     
-
     public void deleteUser(String email) throws SQLException {
         String SQL = "DELETE FROM GROUP35.USER_TABLE WHERE EMAIL=?";
         PreparedStatement PS = connection.prepareStatement(SQL);

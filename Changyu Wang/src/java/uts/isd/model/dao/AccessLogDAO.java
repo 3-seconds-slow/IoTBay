@@ -41,8 +41,7 @@ public class AccessLogDAO {
         PS.executeUpdate();
         PS.close();
     }
-    
-    
+
     public ArrayList<AccessLog> UserAllLogs(String email) throws SQLException {
         ArrayList<AccessLog> UserLog = new ArrayList<AccessLog>();
         String query = "SELECT * FROM Group35.ACCESSLOG_TABLE WHERE email = ?";
@@ -59,12 +58,10 @@ public class AccessLogDAO {
     }
     
     public ArrayList<AccessLog> findUserLogDate(String email,Timestamp begin, Timestamp end) throws SQLException {
+        System.out.println("AAA");
         ArrayList<AccessLog> UserLog = new ArrayList<AccessLog>();
-        String query = "SELECT * FROM Group35.ACCESSLOG_TABLE WHERE email = ? AND  TIME>= ? AND TIME <= ?";
-        PreparedStatement PS = connection.prepareStatement(query);
-        PS.setString(1, email);
-        PS.setTimestamp(2, begin);
-        PS.setTimestamp(3, end);
+        String SQL = "SELECT * FROM Group35.ACCESSLOG_TABLE WHERE EMAIL='"+email+"'AND TIME >='"+begin+"'AND TIME <='"+end+"'";
+        PreparedStatement PS = connection.prepareStatement(SQL);
         ResultSet result = PS.executeQuery(); 
         while(result.next()) {
             email = result.getString(1);
@@ -72,6 +69,7 @@ public class AccessLogDAO {
             String event = result.getString(3);
             UserLog.add(new AccessLog(email, time, event));
         }        
+        System.out.println(SQL);
         return UserLog;
     }
 }

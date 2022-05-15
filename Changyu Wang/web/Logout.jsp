@@ -1,7 +1,7 @@
 <%-- 
     Document   : Logout
     Created on : Mar 27, 2022, 12:13:56 AM
-    Author     : johnwang
+    Author     : Changyu Wang
 --%>
 
 <%@page import="uts.isd.model.User"%>

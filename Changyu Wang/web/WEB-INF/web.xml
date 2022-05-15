@@ -28,6 +28,14 @@
         <servlet-name>DeleteServlet</servlet-name>
         <servlet-class>uts.isd.controller.DeleteServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AccessLogSearchServlet</servlet-name>
+        <servlet-class>uts.isd.controller.AccessLogSearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <servlet-class>uts.isd.controller.UpdateUserInfoServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnectionServlet</servlet-name>
         <url-pattern>/ConnectionServlet</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>DeleteServlet</servlet-name>
         <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AccessLogSearchServlet</servlet-name>
+        <url-pattern>/AccessLogSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateUserInfoServlet</servlet-name>
+        <url-pattern>/UpdateUserInfoServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

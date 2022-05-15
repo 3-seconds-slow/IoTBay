@@ -1,7 +1,7 @@
 <%-- 
     Document   : LoginWelcome
-    Created on : 2022-5-14, 11:41:48
-    Author     : 王梓峰
+    Created on : 2022-5-10, 11:41:48
+    Author     : Changyu Wang
 --%>
 
 <%@page import="uts.isd.model.User"%>
@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="CSS/Footer.css">
         <link rel="stylesheet" href="CSS/Main.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>User： ${user.fullname}! Welcome to Main Page</title>
+        <title>${user.fullname}! Welcome to Main Page</title>
         <%
             User user = (User) session.getAttribute("user");
         %>
@@ -21,7 +21,7 @@
     <body>
         <div class="Nav-Bar">
             <ul>
-                <li class="target"><a href="index.jsp">Home</a></li>
+                <li class="LoginWelcome.jsp"><a href="index.jsp">Home</a></li>
             </ul>
         </div>
         <div class="Content">
@@ -29,7 +29,7 @@
             <h3>Choose the listed Option</h3>
             <button><a href="ViewAccount.jsp">View Account Details</a></button>
             <button><a href="UpdateAccount.jsp">Update Account Details</a></button>
-            <button><a href="ViewAccessLog.jsp">Check Access Log</a></button>
+            <button><a href="ViewAccessLog.jsp">Check All Access Log</a></button>
             <button><a href="SearchAccessLog.jsp">Search Access Log by date</a></button>
             <button><a href="DeleteAccount.jsp">Delete Account</a></button>
             <button><a href="Logout.jsp">Logout</a></button>

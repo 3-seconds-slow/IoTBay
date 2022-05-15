@@ -7,9 +7,12 @@ package uts.isd.controller;
 import java.io.Serializable;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import javax.servlet.http.HttpSession;
 
 
     public class Validator implements Serializable{ 
+
+    
     private String EmailValidator = "([a-zA-Z0-9]+)(([._-])([a-zA-Z0-9]+))*(@)([a-z]+)(.)([a-z]{3})((([.])[a-z]{0,2})*)";      
     private String FullNameValidator = "([A-Z][a-z]+[\\s])+[A-Z][a-z]*";       
     private String PasswordValidator = "[a-z0-9]{4,}";         
@@ -34,11 +37,16 @@ import java.util.regex.Pattern;
     } 
        
     public boolean ValidatorFullName(String name){
+        System.out.println(validate(FullNameValidator,name));
         return validate(FullNameValidator,name); 
     }       
    
     public boolean ValidatorPassword(String password){
         return validate(PasswordValidator,password); 
     }          
+    
+    static void clear(HttpSession session) {
+        session.setAttribute("ERRMSG", "");
+    }
    
 }
